@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sjf-uD-CBU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iyS-BX-3uV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Visits Table View Controller-->
+        <!--Visits-->
         <scene sceneID="SZg-GN-t4r">
             <objects>
                 <tableViewController id="sjf-uD-CBU" customClass="VisitsTableViewController" customModule="Practica" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,6 +52,7 @@
                             <outlet property="delegate" destination="sjf-uD-CBU" id="sPR-FD-Adi"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Visits" id="hA7-XL-2qy"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAO-uB-f72" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,12 +66,104 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="Tgm-sP-W9r" kind="relationship" relationship="rootViewController" id="0eT-bS-YBQ"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ivs-wV-q9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-690" y="762"/>
+            <point key="canvasLocation" x="-2046" y="133"/>
         </scene>
-        <!--Target Table View Controller-->
+        <!--Picker View Controller-->
+        <scene sceneID="qnR-CZ-5yU">
+            <objects>
+                <viewController id="Tgm-sP-W9r" customClass="PickerViewController" customModule="Practica" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bLJ-ic-jUL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="EtU-4b-IdO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6gE-OI-Ue4">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="283.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostrar desde la fecha:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hi-Ih-8WL">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="z58-OK-O6P">
+                                                <rect key="frame" x="0.0" y="20.5" width="375" height="263"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="533153908.95512497">
+                                                    <!--2017-11-23 18:18:28 +0000-->
+                                                </date>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VlR-j7-wZn">
+                                        <rect key="frame" x="0.0" y="283.5" width="375" height="283.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hasta la fecha:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0o-Gn-HE3">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Ny-UZ-0Rg">
+                                                <rect key="frame" x="0.0" y="20.5" width="375" height="263"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="533154108.177607">
+                                                    <!--2017-11-23 18:21:48 +0000-->
+                                                </date>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Bj3-Pz-ylw">
+                                        <rect key="frame" x="0.0" y="567" width="375" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTa-pO-9Dq">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="36"/>
+                                                <state key="normal" title="Visits"/>
+                                                <connections>
+                                                    <segue destination="sjf-uD-CBU" kind="show" identifier="ShowVisits" id="vmc-2I-PJu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2H-iI-gxR">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="36"/>
+                                                <state key="normal" title="My Visits"/>
+                                                <connections>
+                                                    <segue destination="sjf-uD-CBU" kind="show" identifier="ShowMyVisits" id="zOP-PS-zWy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I86-st-yFw">
+                                                <rect key="frame" x="250" y="0.0" width="125" height="36"/>
+                                                <state key="normal" title="Fav"/>
+                                                <connections>
+                                                    <segue destination="sjf-uD-CBU" kind="show" identifier="ShowFav" id="BKn-BL-PGs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EtU-4b-IdO" firstAttribute="top" secondItem="jKb-1m-6aw" secondAttribute="top" id="0Gw-WP-iEj"/>
+                            <constraint firstItem="EtU-4b-IdO" firstAttribute="leading" secondItem="jKb-1m-6aw" secondAttribute="leading" id="4tA-cL-laC"/>
+                            <constraint firstItem="jKb-1m-6aw" firstAttribute="bottom" secondItem="EtU-4b-IdO" secondAttribute="bottom" id="giP-gb-zyd"/>
+                            <constraint firstItem="jKb-1m-6aw" firstAttribute="trailing" secondItem="EtU-4b-IdO" secondAttribute="trailing" id="m51-Ac-QzS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jKb-1m-6aw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YBe-kc-fNG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="flW-QL-3zc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-946.39999999999998" y="132.68365817091455"/>
+        </scene>
+        <!--Target-->
         <scene sceneID="1X4-mM-rlS">
             <objects>
                 <tableViewController id="Cgk-yK-zdd" customClass="TargetTableViewController" customModule="Practica" customModuleProvider="target" sceneMemberID="viewController">
@@ -108,10 +202,14 @@
                             <outlet property="delegate" destination="Cgk-yK-zdd" id="B8c-a3-Jus"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Target" id="X1E-RO-a8b"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9w-e0-f1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1257" y="133"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vmc-2I-PJu"/>
+    </inferredMetricsTieBreakers>
 </document>

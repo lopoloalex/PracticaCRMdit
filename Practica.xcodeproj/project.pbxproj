@@ -13,6 +13,7 @@
 		E3777BB81FC42764003BDD93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3777BB61FC42764003BDD93 /* LaunchScreen.storyboard */; };
 		E3777BC21FC427DF003BDD93 /* VisitsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3777BC11FC427DF003BDD93 /* VisitsTableViewController.swift */; };
 		E38315A21FC73B16008CA0D0 /* TargetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38315A11FC73B16008CA0D0 /* TargetTableViewController.swift */; };
+		E38315A41FC74B33008CA0D0 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38315A31FC74B33008CA0D0 /* PickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E3777BB91FC42764003BDD93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3777BC11FC427DF003BDD93 /* VisitsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsTableViewController.swift; sourceTree = "<group>"; };
 		E38315A11FC73B16008CA0D0 /* TargetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTableViewController.swift; sourceTree = "<group>"; };
+		E38315A31FC74B33008CA0D0 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				E3777BB91FC42764003BDD93 /* Info.plist */,
 				E3777BC11FC427DF003BDD93 /* VisitsTableViewController.swift */,
 				E38315A11FC73B16008CA0D0 /* TargetTableViewController.swift */,
+				E38315A31FC74B33008CA0D0 /* PickerViewController.swift */,
 			);
 			path = Practica;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			files = (
 				E3777BAE1FC42764003BDD93 /* AppDelegate.swift in Sources */,
 				E38315A21FC73B16008CA0D0 /* TargetTableViewController.swift in Sources */,
+				E38315A41FC74B33008CA0D0 /* PickerViewController.swift in Sources */,
 				E3777BC21FC427DF003BDD93 /* VisitsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
