@@ -53,7 +53,7 @@ class VisitsTableViewController: UITableViewController {
                     
                 }
                 if let visits = (try? JSONSerialization.jsonObject(with: data!)) as? [Visit]{
-                    DispatchQueue.main.sync {
+                    DispatchQueue.main.async {
                         self.visits = visits
                         self.tableView.reloadData()
                     }
@@ -82,16 +82,21 @@ class VisitsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Visit Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Visit Cell", for: indexPath) as! VisitasTableViewCell
         let visit = visits[indexPath.row]
         
-        cell.textLabel?.text = ""
-        cell.detailTextLabel?.text=""
+        cell.Nombre.text = ""
+        cell.Fecha.text=""
+        cell.ImagenVisitas.image = #imageLiteral(resourceName: "Image-1")
+        cell.Objetivos.text = ""
         
         // cell.imageView?.image = UIImage (named: "noface")
         if let customer = visit["Customer"] as? [String:Any],
             let name = customer ["name"] as? String {
-            cell.textLabel?.text = name
+            cell.Nombre.text = name
+        }
+        if let notas = visit["notes"] as? String{
+            cell.Objetivos.text = notas
         }
         // Convertir un String ISO8601 en una Date:
         if let plannedFor = visit["plannedFor"] as? String {
@@ -99,7 +104,7 @@ class VisitsTableViewController: UITableViewController {
             df.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
             if let d = df.date(from: plannedFor){
                 let str3 = ISO8601DateFormatter.string(from: d, timeZone: .current, formatOptions: [.withFullDate])
-                cell.detailTextLabel?.text = str3
+                cell.Fecha.text = str3
             }
         }
         //codigo para salessman visits salessman etc etc
@@ -107,7 +112,7 @@ class VisitsTableViewController: UITableViewController {
             let photo = salesman["Photo"] as? [String:Any],
             let strurl = photo["url"] as? String {
             if let img = imgCache[strurl]{
-                cell.imageView?.image = img
+                cell.ImagenVisitas.image = img
             } else {
                 updatePhoto(strurl,for: indexPath)
             }
